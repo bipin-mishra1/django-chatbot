@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="chat-container">
+  <div class="card flex-grow-1">
+    <div class="card-header">AI Chat</div>
+    <div class="card-body messages-box">
+      <!-- Chat messages here -->
+      <ul class="list-unstyled messages-list">
+        <!-- Existing chat messages -->
+        <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+              Hi, I am your AI Chatbot, you can ask me anything.
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="loading" style="display: none;">...</div>
+  </div>
+  <form class="message-form">
+    {% csrf_token %}
+    <div class="input-group">
+      <input type="text" class="form-control message-input" placeholder="Type your message...">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary btn-send">Send</button>
+      </div>
+    </div>
+  </form>
+  <!-- Logout button -->
+  <a href="{% url 'logout' %}" class="btn btn-danger btn-logout" style="position: absolute; top: 10px; right: 10px;">Logout</a>
+</div>
+{% endblock %}

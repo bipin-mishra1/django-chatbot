@@ -1,0 +1,6 @@
+.idea
+.venv
+.env
+chatbot/gptbot/migrations/
+chatbot/gptbot/migrations/__pycache__/
+chatbot/*/__pycache__/
